@@ -8,12 +8,12 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity T3L_Eurolfan_tb is
+entity T3L_Eurolfan_tb_v2 is
 	constant DELAY: time := 10 ns;
 end entity;
 
-architecture tb_arch of T3L_Eurolfan_tb is
-	component T3L_Eurolfan is
+architecture tb_arch of T3L_Eurolfan_tb_v2 is
+	component T3L_Eurolfan_v2 is
 		port (i0, i1, i2, i3, i4, i5 : in std_logic; result : out std_logic);
 	end component;
 
@@ -21,7 +21,7 @@ architecture tb_arch of T3L_Eurolfan_tb is
 	signal i0, i1, i2, i3, i4, i5: std_logic;
 	
 	begin -- architecture
-		uut: component T3L_Eurolfan port map (i0, i1, i2, i3, i4, i5, result);
+		uut: component T3L_Eurolfan_v2 port map (i0, i1, i2, i3, i4, i5, result);
 		
 		process
 			variable error_count: integer := 0;
